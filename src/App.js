@@ -23,12 +23,6 @@ export default function App() {
     document.body.style.background = "black";
   }, []);
 
-  useEffect(() => {
-    if (step >= 2 && audioRef.current) {
-      audioRef.current.volume = 0.6;
-      audioRef.current.play().catch(() => {});
-    }
-  }, [step]);
 
   useEffect(() => {
     if (step === 3) {
