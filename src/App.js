@@ -94,12 +94,18 @@ export default function App() {
 
                 <button
                   style={buttonStyle}
-                  onClick={() => {
-                    if (answer === correctAnswer) {
-                      setShowConfetti(true);
-                      setStep(2);
-                    } else alert("Almost… try again 💭");
-                  }}
+                 onClick={() => {
+                   if (answer === correctAnswer) {
+                     if (audioRef.current) {
+                       audioRef.current.volume = 0.6;
+                       audioRef.current.play().catch(() => {});
+                     }
+                     setShowConfetti(true);
+                     setStep(2);
+                   } else {
+                     alert("Almost… try again 💭");
+                   }
+                 }}
                 >
                   Unlock 💖
                 </button>
