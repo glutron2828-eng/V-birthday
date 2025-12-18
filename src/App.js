@@ -13,7 +13,7 @@ export default function App() {
     setAnswer("");
   }, []);
 
-  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const audioRef = useRef(null);
 
   const correctAnswer = "22/11/2025";
   const photos = ["/photos/1.jpeg", "/photos/2.jpeg", "/photos/3.jpeg"];
